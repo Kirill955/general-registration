@@ -1,0 +1,104 @@
+@mixin mq($width, $type: min) {
+  @if $type == max {
+    $width: $width - 1px ;
+  }
+  @media only screen and (#{$type}-width: $width) {
+    @content;
+  }   
+}
+// @mixin afs( $First, $Second, $Third, $Zero:$First) {
+//   @include mq($TableWidth, max) {
+//     font-size : $Second ;
+//   }
+//   @include mq($PhoneWidth, max) {
+//     font-size : $Third ;
+//   }
+//   @include mq($TableWidth, min) {
+//     font-size : $First ;
+//   }
+//   @include mq($SmDesktopWidth, min) {
+//     font-size : $Zero ;
+//   }
+// }
+@mixin afs($First, $Second, $Third, $fouth: $Third, $Zero: $First) {
+  @include mq($TableWidth, max) {
+    font-size: $Second;
+  }
+  @include mq($PhoneWidth, max) {
+    font-size: $Third;
+  }
+  @include mq($SmPhoneWidth, max) {
+    font-size: $fouth;
+  }
+  @include mq($TableWidth, min) {
+    font-size: $First;
+  }
+  @include mq($SmDesktopWidth, min) {
+    font-size: $Zero;
+  }
+}
+@mixin size( $width,$height:$width) {
+  height : $height ;
+  width : $width ;
+}
+@mixin positionCenter($positionType:absolute) {
+  left : 50% ;
+  position : $positionType ;
+  top : 50% ;
+  transform : translate(-50%, -50%) ;
+}
+@mixin positionCenterX($positionType:absolute) {
+  left : 50% ;
+  position : $positionType ;
+  top : auto ;
+  transform : translateX(-50%) ;
+}
+@mixin positionCenterY($positionType:absolute) {
+  left : auto ;
+  position : $positionType ;
+  top : 50% ;
+  transform : translateY(-50%) ;
+}
+@mixin bg($path, $size:cover,$repeat:no-repeat,$position:50% 50%,$fixed:scroll) {
+  background-attachment : $fixed ;
+  background-image : $path ;
+  background-position : $position ;
+  background-repeat : $repeat ;
+  background-size : $size ;
+}
+@mixin dialog-wingow($width, $height:auto, $breakepoint: $TableWidth) {
+  @include positionCenter(fixed);
+  @include size($width, $height);
+  @media screen and (max-width: $breakepoint) {
+    padding : 1rem ;
+    width : 100% ;
+  }
+} 
+@mixin br($btr, $btl:$btr, $bbr:$btr, $bbl:$btr ) {
+  border-bottom-left-radius : $bbl ;
+  border-bottom-right-radius : $bbr ;
+  border-top-left-radius : $btl ;
+  border-top-right-radius : $btr ;
+}
+@mixin pseudo($display: block, $pos: absolute, $content: '') {
+  content : $content ;
+  display : $display ;
+  position : $pos ;
+}
+@mixin grad-l($deg,$direction, $color-stops, $per1:0%,$per2:50%) {	
+  background : linear-gradient($deg, $direction $per1, $color-stops $per2) ;
+}
+@mixin sep-h($w, $h, $color) {
+  background-color : $color ;
+  display : block ;
+  height : $h ;
+  margin : 0 auto ;
+  width : $w ;	
+}
+@function get-percent($target, $width_mockup:1920, $part: 100%) {
+  @return ($target / $width_mockup * $part);
+}
+@function get-vw($target, $width_mockup:1920) {
+  $vw-context: ($width_mockup * 0.01) * 1px ;
+  @return ($target / $vw-context) * 1vw;
+}

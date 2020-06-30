@@ -1,0 +1,26 @@
+# top-most EditorConfig file
+root = true
+
+[*.md]
+trim_trailing_whitespace = false
+
+[*.js]
+trim_trailing_whitespace = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+end_of_line = lf
+charset = utf-8
+max_line_length = 100
+
+[node_modules/**]
+trim_trailing_whitespace = ignore
+indent_style = ignore
+indent_size = ignore
+end_of_line = ignore
+charset = ignore
+insert_final_newline = ignore
+max_line_length = ignore

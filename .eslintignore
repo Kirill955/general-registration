@@ -1,0 +1,6 @@
+src/serviceWorker.ts
+src/react-app-env.d.ts
+src/**/__tests__/**
+/.vscode
+/node_modules
+/build

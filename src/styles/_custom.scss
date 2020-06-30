@@ -1,0 +1,14 @@
+// Для стилизациии текста от команды React
+@mixin fontsElem($ffam: 'SF UI Text', $fw: normal, $fst: normal ,$color: #000, $tt: uppercase) {
+  color : $color ;
+  font-family : $ffam ;
+  font-style : $fst ;
+  font-weight : $fw ;
+  text-transform : $tt ;
+}
+// Центрирование внутри элемента flex от команды React
+@mixin centerEl {
+  align-items : center ;
+  display : flex ;
+  justify-content : center ;
+}

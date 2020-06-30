@@ -1,0 +1,153 @@
+@import "../../../styles/setting";
+
+.main {
+  width: 676px;
+  margin: 3rem auto;
+  box-shadow: 0px 5.5px 5px rgba(0, 0, 0, 0.24), 0px 9px 18px rgba(0, 0, 0, 0.18);
+  padding: 4rem 7rem;
+  display: flex;
+  flex-direction: column;
+  font-family: "SF UI Text";
+}
+
+.title {
+  @include afs(26px, 26px, 24px, 12px);
+  color: $black;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.method {
+  text-transform: uppercase;
+  display: flex;
+  font-weight: 300;
+  cursor: pi;
+  div {
+    padding: 0.125rem 0.5rem;
+  }
+  .active {
+    font-weight: 500;
+    border-bottom: 2px solid $main;
+    color: $main;
+  }
+}
+
+.btn {
+  &-enter {
+    background-color: $main;
+    color: $white;
+    padding: 1rem 0rem;
+    text-align: center;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    @include afs(18px, 18px, 14px);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  .social_item {
+    @include size(48px);
+    margin-right: 1rem;
+    &:last-child {
+      margin-right: 0px;
+    }
+    img {
+      width: 100%;
+    }
+  }
+}
+
+
+/*адаптация*/
+@include mq($TableWidth, max) {
+  .main {
+    box-shadow: none;
+    width: 100%;
+  }
+}
+
+@include mq($PhoneWidth, max) {
+  .main {
+    padding: 2rem 1rem;
+  }
+}
+
+@include mq($SmPhoneWidth, max) {
+  .main {
+    position: relative;
+    padding: 2rem 1rem;
+    margin: 0px;
+  }
+
+  .header {
+    margin-bottom: 3rem;
+  }
+
+  .title {
+    position: absolute;
+    top: 0.25rem;
+    right: 1rem;
+  }
+
+  .window {
+    order: 3;
+    margin-bottom: 0px;
+    margin-top: 2rem;
+  }
+
+  .footer {
+    order: 2;
+  }
+}
+/*адаптация*/
+
+/*общие стили */
+.l-h {
+  line-height: 30px;
+}
+.border-elem {
+  border-bottom: 2px solid $main;
+}
+/*общие стили */
+
+/*pass-restore3*/
+.pass-restore3 {
+  input {
+    font-size: 3rem;
+    text-align: center;
+    padding: 0.5rem 0rem;
+  }
+  .group {
+    input,
+    div {
+      margin-right: 1rem;
+      &:last-child {
+        margin-right: 0px;
+      }
+    }
+  }
+}
+
+/*pass-restore*/
+
+/*Email submit*/
+.email-submit {
+  .main {
+    @include mq($TableWidth, min) {
+      padding: 4rem 6rem;
+    }
+  }
+  @include mq($SmPhoneWidth, max) {
+    .title {
+      @include afs(26px, 26px, 24px, 10px);
+    }
+  }
+}
+/*Email submit*/

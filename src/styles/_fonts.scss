@@ -1,0 +1,14 @@
+@font-face {
+  font-family : 'SF UI Text' ;
+  font-style : normal ;
+  font-weight : normal ;
+  src : local('../assets/fonts/SF-UI-TEXT-REGULAR.ttf'), url('../assets/fonts/SF-UI-TEXT-REGULAR.ttf') format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family : 'SF UI Text' ;
+  font-style : normal ;
+  font-weight : bold ;
+  src : local('../assets/fonts/SF-UI-TEXT-BOLD.otf'), url('../assets/fonts/SF-UI-TEXT-BOLD.otf');
+}

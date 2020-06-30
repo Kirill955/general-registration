@@ -1,0 +1,35 @@
+.cl- {
+  &blue {
+    color: $main;
+  }
+  &grey_l {
+    color: $grey_light;
+  }
+  &black {
+    color: $black;
+  }
+  &grey_d {
+    color: $grey_dark;
+  }
+  &white {
+    color: $white;
+  }
+}
+
+.bg- {
+  &blue {
+    background-color: $main;
+  }
+  &grey_l {
+    background-color: $grey_light;
+  }
+  &black {
+    background-color: $black;
+  }
+  &grey_d {
+    background-color: $grey_dark;
+  }
+  &white {
+    background-color: $white;
+  }
+}

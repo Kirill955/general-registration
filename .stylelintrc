@@ -1,0 +1,8 @@
+{
+  "extends": ["stylelint-config-sass-guidelines"],
+  "rules": {
+    "indentation": 2,
+    "declaration-colon-space-before": "always",
+    "declaration-block-semicolon-space-before": "always"
+  }
+}

@@ -1,0 +1,75 @@
+stages:
+   - build
+   - deploy
+
+
+# build stage
+build_app:
+   image: node:alpine
+   stage: build
+   only:
+      - master
+   script:
+      - npm install
+      - npm run build
+   cache:
+     paths:
+       - node_modules/
+   artifacts:
+      paths:
+         # build folder
+         - build/
+      expire_in: 1 hour
+
+# production stage
+deploy:
+   image: python:alpine
+   stage: deploy
+   needs: 
+        - job: build_app
+          artifacts: true
+   only:
+      - master
+   script:
+      - pip install awscli
+      - aws configure set aws_access_key_id "$ACCESS_KEY_ID"
+      - aws configure set aws_secret_access_key "$SECRET_ACCESS_KEY"
+      - aws configure set default.region "$REGION"
+      - aws --endpoint-url=https://storage.yandexcloud.net s3 rm s3://test.auth.leadersmanagement.com --recursive
+      - aws --endpoint-url=https://storage.yandexcloud.net s3 sync ./build/ s3://test.auth.leadersmanagement.com
+      - echo "end"
+
+build_docs:
+   image: node:alpine
+   stage: build
+   only:
+      - master
+   script:
+      - npm install
+      - npm run styleguide:build
+   cache:
+     paths:
+       - node_modules/
+   artifacts:
+      paths:
+         # build folder
+         - styleguide/
+      expire_in: 1 hour
+
+# production stage
+deploy_docs:
+   image: python:alpine
+   stage: deploy
+   needs: 
+        - job: build_docs
+          artifacts: true
+   only:
+      - master
+   script:
+      - pip install awscli
+      - aws configure set aws_access_key_id "$ACCESS_KEY_ID"
+      - aws configure set aws_secret_access_key "$SECRET_ACCESS_KEY"
+      - aws configure set default.region "$REGION"
+      - aws --endpoint-url=https://storage.yandexcloud.net s3 rm s3://docs.auth.leadersmanagement.com --recursive
+      - aws --endpoint-url=https://storage.yandexcloud.net s3 sync ./styleguide/ s3://docs.auth.leadersmanagement.com
+      - echo "end"
