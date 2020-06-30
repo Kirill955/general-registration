@@ -11,14 +11,14 @@ const App: React.FunctionComponent = () => (
   <Suspense fallback={<div>Загрузка</div>}>
     <Switch>
       <Route exact path={'/'}>
-        <Views.Home />
+        <Views.SignUp />
       </Route>
       <Route exact path="/login">
         <Views.Login />
       </Route>
-      <Route exact path="/signup">
+      {/* <Route exact path="/signup">
         <Views.SignUp />
-      </Route>
+      </Route> */}
       <Route exact path="/confirmemail">
         <Views.ConfirmEmail />
       </Route>
