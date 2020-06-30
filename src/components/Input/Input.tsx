@@ -7,6 +7,7 @@ import InputPassword from './InputPassword';
 import InputText from './InputText';
 import InputNumber from './InputNumber';
 import InputSelect from './InputSelect';
+import InputCheckbox from './InputCheckbox';
 
 /**
  * Компонент для всех input-ов
@@ -17,4 +18,5 @@ export const Input = {
   Text: InputText,
   Number: InputNumber,
   Select: InputSelect,
+  Checkbox: InputCheckbox,
 };

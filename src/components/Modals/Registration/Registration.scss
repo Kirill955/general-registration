@@ -1,0 +1,55 @@
+@import "../../../styles/setting";
+
+.photo-profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include mq($SmPhoneWidth, max) {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    .avatar-info {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.avatar-img {
+  @include ads(132px, 132px, 125px, 125px);
+  img {
+    max-width: auto;
+    width: 100%;
+  }
+}
+
+.gender {
+  &-l,
+  &-s {
+    display: none;
+  }
+}
+
+.avatar-info {
+  display: flex;
+  align-items: center;
+}
+
+@include mq($SmPhoneWidth, max) {
+  .gender-s {
+    display: flex;
+  }
+  .about {
+    margin: 0rem;
+  }
+}
+
+@include mq($SmPhoneWidth, min) {
+  .gender-l {
+    display: flex;
+  }
+}
+
+@include mq($TableWidth, min) {
+  .about {
+    padding: 1rem;
+  }
+}

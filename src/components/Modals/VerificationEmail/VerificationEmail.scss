@@ -1,0 +1,17 @@
+@import '../../../styles/setting';
+
+
+/*Email submit*/
+.email-submit {
+    .main {
+      @include mq($TableWidth, min) {
+        padding: 4rem 6rem;
+      }
+    }
+    @include mq($SmPhoneWidth, max) {
+      .title {
+        @include afs(26px, 26px, 24px, 10px);
+      }
+    }
+  }
+  /*Email submit*/

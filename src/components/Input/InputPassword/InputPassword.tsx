@@ -8,12 +8,12 @@ import { OwnPropsType, MapDispatchToPropsType, MapStateToPropsType } from './typ
 type Props = OwnPropsType & MapDispatchToPropsType & MapStateToPropsType;
 
 /**
- * Выводит поле для ввода пароля
+ * Выводит поле для ввода пароля или любых других скрытых полей
  */
-export const InputPassword: React.FunctionComponent<Props> = () => {
+export const InputPassword: React.FunctionComponent<Props> = ({ plsText }) => {
   return (
     <div className="input-icon">
-      <input placeholder="Пароль" type="password" name="password" className="input" />
+      <input placeholder={plsText} type="password" name="password" className="input" />
       <img src={eye} alt="eye-icon" />
     </div>
   );

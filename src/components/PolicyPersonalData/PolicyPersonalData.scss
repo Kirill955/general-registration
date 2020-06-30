@@ -1,0 +1,70 @@
+@import '../../styles/setting';
+
+.policy-wrapper {
+  width: 69vw;
+  padding: 44px 37px 51px 24px;
+  background: $homeMain;
+  font-family: 'SF UI Text';
+  color: $black;
+}
+
+.policy-title {
+  margin-bottom: 4.4rem;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 2rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.policy-subtitle {
+  margin-bottom: 2.5rem;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.2rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.policy-paragrap {
+  margin-bottom: 2.75rem;
+  margin-left: 25px;
+  font-size: 18px;
+  line-height: 2rem;
+  letter-spacing: 0.03em;
+}
+
+// Media query 
+@include mq( $TableWidth, max ) {
+  .policy-wrapper {
+    padding: 44px 37px 51px 24px;
+  }
+  .policy-title {
+    margin-bottom: 3rem;
+  }
+  .policy-subtitle {
+    margin-bottom: 1.6rem;
+  }
+}
+
+@include mq( $PhoneWidth, max ) {
+  .policy-wrapper {
+    padding: 44px 17px 51px 17px;
+  }
+  .policy-title {
+    font-size: 14px;
+    line-height: 1.3rem;
+    letter-spacing: 0.1em;
+  }
+  .policy-subtitle {
+    margin-bottom: 1.6rem;
+    font-size: 14px;
+    line-height: 1.3rem;
+    letter-spacing: 0.1em;
+  }
+  .policy-paragrap {
+    margin-left: 8px;
+    font-size: 12px;
+    line-height: 1.1rem;
+  }
+}

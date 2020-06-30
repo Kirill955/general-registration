@@ -1,0 +1,29 @@
+@import '../../../styles/setting';
+
+.btn-submit {
+  @include size(210px, 51px);
+  padding: 1rem 0rem;
+  background-color: $main;
+  color: $white;
+  text-align: center;
+  border-radius: 1px;
+  font-weight: 500;
+  @include afs(18px, 18px, 14px);
+  text-transform: uppercase;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+// Media query 
+@include mq($TableWidth, max) {
+  .btn-submit {
+    @include size(280px, 60px);
+  }
+}
+
+@include mq($PhoneWidth, max) {
+  .btn-submit {
+    @include size(288px, 50px);
+  }
+}

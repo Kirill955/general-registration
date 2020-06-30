@@ -23,7 +23,7 @@ export const SignIn: React.FunctionComponent<Props> = () => {
       </div>
       <form action="" className="window mb-7">
         <Input.Email />
-        <Input.Password />
+        <Input.Password plsText="Пароль" />
         <div className="pl-1 cl-blue fs-18 mb-3">Забыли пароль?</div>
         <div className="center">
           <button type="submit" className="btn-enter">

@@ -32,13 +32,15 @@
     right: 0.5rem;
   }
 }
+.select select {
+  border-bottom: 2px solid $grey_light;
+}
 select {
   @include afs(16px, 16px, 14px);
   color: $grey_light;
   padding: 0.5rem;
   padding-right: 2rem;
   width: 100%;
-  border-bottom: 2px solid $grey_light;
   -moz-appearance: none;
   -webkit-appearance: none;
   option {

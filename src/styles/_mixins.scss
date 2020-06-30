@@ -102,3 +102,19 @@
   $vw-context: ($width_mockup * 0.01) * 1px ;
   @return ($target / $vw-context) * 1vw;
 }
+
+@mixin ads($widthL, $widthM, $widthS, $widthXS) {
+  @include mq($TableWidth, max) {
+    @include size($widthM);
+  }
+  @include mq($PhoneWidth, max) {
+    @include size($widthS);
+  }
+  @include mq($SmPhoneWidth, max) {
+    @include size($widthXS);
+  }
+
+  @include mq($SmDesktopWidth, min) {
+    @include size($widthL);
+  }
+}

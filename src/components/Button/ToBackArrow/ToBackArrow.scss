@@ -1,0 +1,14 @@
+@import '../../../styles/setting';
+
+.to_back {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  button {
+    background: none;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

@@ -2,6 +2,7 @@
 
 ```tsx
   import { SocialIconItem } from './SocialIconItem.tsx';
+  import Google from 'assets/images/social-icons/google.png';
 
-  <SocialIconItem src="assets/images/social-icons/google.png" alt="google" />
+  <SocialIconItem src={Google} alt="google" />
 ```

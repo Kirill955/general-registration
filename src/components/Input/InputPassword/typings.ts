@@ -2,4 +2,7 @@ export type MapStateToPropsType = {};
 
 export type MapDispatchToPropsType = {};
 
-export type OwnPropsType = {};
+export type OwnPropsType = {
+  // Текст placeholder
+  plsText: string;
+};
